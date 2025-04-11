@@ -1,0 +1,933 @@
+/* Reset de base compatible avec les anciens navigateurs */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Éléments HTML5 pour les anciens navigateurs */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Variables CSS avec fallbacks pour les anciens navigateurs */
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #e00000;
+  --ternary-color: #ff0a0a;
+  --hero-image-background-color: #3e3232;
+  --text-color: #f5f5f5;
+  --text-secondary-color: #a3a3a3;
+  --background-color: #121212;
+  --accent-color: #d3d3d3;
+  --focus-color: #ffcc00;
+  --container-width: 1200px;
+}
+
+/* Styles de base */
+body {
+  line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5f5f5;
+  /* Fallback pour --text-color */
+  color: var(--text-color);
+  background-color: #121212;
+  /* Fallback pour --background-color */
+  background-color: var(--background-color);
+  font-size: 16px;
+}
+
+/* Conteneur principal */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  /* Fallback pour --container-width */
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Typographie */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 1em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 0.8em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Liens */
+a {
+  color: #d3d3d3;
+  /* Fallback pour --accent-color */
+  color: var(--accent-color);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+a:hover,
+a:focus {
+  color: #e00000;
+  /* Fallback pour --secondary-color */
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 3px solid #ffcc00;
+  /* Fallback pour --focus-color */
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+small{
+  font-size:.925rem;
+  color:#a3a3a3; /*Fallback pour --text-secondary-color*/
+  color:var(--text-secondary-color);
+}
+
+/* Skip link pour l'accessibilité */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #e00000;
+  /* Fallback pour --secondary-color */
+  background: var(--secondary-color);
+  color: #f5f5f5;
+  /* Fallback pour --text-color */
+  color: var(--text-color);
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header */
+header {
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 3px solid #e00000;
+  /* Fallback pour --secondary-color */
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+header h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #d3d3d3;
+  /* Fallback pour --accent-color */
+  color: var(--accent-color);
+}
+
+/* Navigation */
+nav {
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block;
+  color: #f5f5f5;
+  /* Fallback pour --text-color */
+  color: var(--text-color);
+  font-weight: bold;
+  position: relative;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #e00000;
+  /* Fallback pour --secondary-color */
+  color: var(--secondary-color);
+}
+
+nav a[aria-current="page"] {
+  color: #e00000;
+  /* Fallback pour --secondary-color */
+  color: var(--secondary-color);
+}
+
+nav a[aria-current="page"]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e00000;
+  /* Fallback pour --secondary-color */
+  background-color: var(--secondary-color);
+}
+
+/* Main content */
+main {
+  padding: 30px 0;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* Hero section */
+.hero {
+  background-color: rgba(26, 26, 26, 0.8);
+  /* Fallback pour --primary-color avec opacité */
+  background-color: rgba(var(--primary-color), 0.8);
+  padding: 40px 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.hero h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.hero img {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  background-color: #3e3232;
+  /* Fallback pour --hero-image-background-color*/
+  background-color: var(--hero-image-background-color);
+  border: 6px solid var(--hero-image-background-color);
+  border-radius: 5px;
+}
+
+.cta-container {
+  margin-top: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #e00000;
+  /* Fallback pour --secondary-color */
+  background-color: var(--secondary-color);
+  color: #f5f5f5;
+  /* Fallback pour --text-color */
+  color: var(--text-color);
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #ff0a0a;
+  /* Fallback pour --ternary-color */
+  background-color: var(--ternary-color);
+  color: #f5f5f5;
+  /* Fallback pour --text-color */
+  color: var(--text-color);
+}
+
+/* Video container */
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.iframe-bande-annonce {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1.777;
+  background-image: url("https://fr.web.img6.acsta.net/c_310_420/img/4a/3c/4a3c5e628d12c7185ef1b35e5108c572.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fallback-image {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e00000;
+  /* Fallback pour --secondary-color */
+  border: 1px solid var(--secondary-color);
+}
+
+/* Info grid */
+.info-grid {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.info-item {
+  flex-basis: calc(50% - 20px);
+  margin-bottom: 20px;
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Page header */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Characters grid */
+.characters-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.character-card {
+  flex-basis: calc(50% - 20px);
+  margin-bottom: 30px;
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  overflow: hidden;
+  padding-block:1.5rem 0;
+}
+
+.character-image{
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  max-height:350px;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  object-position:center;
+  margin-inline:auto;
+  border-radius:5px;
+  display: block;
+}
+
+.character-info {
+  padding: 15px;
+}
+
+.character-info h3 {
+  color: #e00000;
+  /* Fallback pour --secondary-color */
+  color: var(--secondary-color);
+  margin-top: 0;
+}
+
+/* Gallery */
+.gallery {
+  margin-bottom: 40px;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.gallery-nav-button {
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  color: #f5f5f5;
+  /* Fallback pour --text-color */
+  color: var(--text-color);
+  border: 1px solid #e00000;
+  /* Fallback pour --secondary-color */
+  border: 1px solid var(--secondary-color);
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.gallery-nav-button:hover,
+.gallery-nav-button:focus {
+  background-color: #e00000;
+  /* Fallback pour --secondary-color */
+  background-color: var(--secondary-color);
+}
+
+.gallery-container {
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.gallery-item {
+  display: none;
+  text-align: center;
+}
+
+.gallery-item:first-child {
+  display: block;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.gallery-item figcaption {
+  font-style: italic;
+  color: #d3d3d3;
+  /* Fallback pour --accent-color */
+  color: var(--accent-color);
+}
+
+.gallery-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumbnail-button {
+  background: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.thumbnail-button[aria-selected="true"] {
+  border-color: #e00000;
+  /* Fallback pour --secondary-color */
+  border-color: var(--secondary-color);
+}
+
+.thumbnail-button:focus {
+  outline: 3px solid #ffcc00;
+  /* Fallback pour --focus-color */
+  outline: 3px solid var(--focus-color);
+}
+
+.thumbnail-button img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Behind scenes */
+.behind-scenes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.behind-scenes-grid figure {
+  flex-basis: calc(50% - 15px);
+  margin-bottom: 30px;
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.behind-scenes-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.behind-scenes-grid figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  /* Fallback pour --primary-color */
+  background-color: var(--primary-color);
+  padding: 20px 0;
+  border-top: 3px solid #e00000;
+  /* Fallback pour --secondary-color */
+  border-top: 3px solid var(--secondary-color);
+  margin-top: 40px;
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer p {
+  margin-bottom: 15px;
+}
+
+footer nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+footer nav li {
+  margin: 0 10px;
+}
+
+/* Media Queries pour la responsivité */
+/* Tablettes */
+@media screen and (max-width: 768px) {
+
+  .info-item,
+  .character-card,
+  .behind-scenes-grid figure {
+    flex-basis: 100%;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  .hero h2 {
+    font-size: 1.8em;
+  }
+
+  .thumbnail-button img {
+    width: 60px;
+    height: 45px;
+  }
+}
+
+/* Mobiles */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 5px 0;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.5em;
+  }
+
+  .gallery-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .thumbnail-button img {
+    width: 50px;
+    height: 40px;
+  }
+}
+
+/* Styles pour l'accessibilité */
+*:focus {
+  outline: 3px solid #ffcc00;
+  /* Fallback pour --focus-color */
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Styles pour la galerie CSS-only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Cacher les inputs radio */
+.gallery-control {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cacher toutes les images par défaut */
+.gallery-item {
+  display: none;
+}
+
+/* Afficher uniquement l'image sélectionnée */
+#image-control-1:checked~.gallery-container #gallery-image-1,
+#image-control-2:checked~.gallery-container #gallery-image-2,
+#image-control-3:checked~.gallery-container #gallery-image-3,
+#image-control-4:checked~.gallery-container #gallery-image-4,
+#image-control-5:checked~.gallery-container #gallery-image-5,
+#image-control-6:checked~.gallery-container #gallery-image-6 {
+  display: block;
+}
+
+/* Cacher tous les ensembles de navigation par défaut */
+.nav-set {
+  display: none;
+}
+
+/* Afficher l'ensemble de navigation correspondant à l'image sélectionnée */
+#image-control-1:checked~.gallery-nav #nav-set-1,
+#image-control-2:checked~.gallery-nav #nav-set-2,
+#image-control-3:checked~.gallery-nav #nav-set-3,
+#image-control-4:checked~.gallery-nav #nav-set-4,
+#image-control-5:checked~.gallery-nav #nav-set-5,
+#image-control-6:checked~.gallery-nav #nav-set-6 {
+  display: block;
+}
+
+/* Styles pour les boutons de navigation */
+.gallery-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.gallery-nav-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-nav-button:hover,
+.gallery-nav-button:focus {
+  background-color: #e00000;
+  /* Couleur secondaire */
+  outline: none;
+}
+
+.gallery-nav-button:focus {
+  box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.5);
+}
+
+/* Styles pour les miniatures */
+.gallery-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.thumbnail-button {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-button:hover,
+.thumbnail-button:focus {
+  border-color: #e00000;
+  /* Couleur secondaire */
+  outline: none;
+}
+
+.thumbnail-button img {
+  display: block;
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Mettre en évidence la miniature active */
+#image-control-1:checked~.gallery-thumbnails label[for="image-control-1"],
+#image-control-2:checked~.gallery-thumbnails label[for="image-control-2"],
+#image-control-3:checked~.gallery-thumbnails label[for="image-control-3"],
+#image-control-4:checked~.gallery-thumbnails label[for="image-control-4"],
+#image-control-5:checked~.gallery-thumbnails label[for="image-control-5"],
+#image-control-6:checked~.gallery-thumbnails label[for="image-control-6"] {
+  border-color: #e00000;
+  /* Couleur secondaire */
+}
+
+/* Mise à jour des attributs ARIA pour l'accessibilité */
+#image-control-1:checked~.gallery-thumbnails label[for="image-control-1"],
+#image-control-2:checked~.gallery-thumbnails label[for="image-control-2"],
+#image-control-3:checked~.gallery-thumbnails label[for="image-control-3"],
+#image-control-4:checked~.gallery-thumbnails label[for="image-control-4"],
+#image-control-5:checked~.gallery-thumbnails label[for="image-control-5"],
+#image-control-6:checked~.gallery-thumbnails label[for="image-control-6"] {
+  position: relative;
+}
+
+#image-control-1:checked~.gallery-thumbnails label[for="image-control-1"]::after,
+#image-control-2:checked~.gallery-thumbnails label[for="image-control-2"]::after,
+#image-control-3:checked~.gallery-thumbnails label[for="image-control-3"]::after,
+#image-control-4:checked~.gallery-thumbnails label[for="image-control-4"]::after,
+#image-control-5:checked~.gallery-thumbnails label[for="image-control-5"]::after,
+#image-control-6:checked~.gallery-thumbnails label[for="image-control-6"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* Styles pour les images de la galerie */
+.gallery-container {
+  margin: 1rem 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.gallery-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Support pour les anciens navigateurs */
+@media screen and (max-width: 600px) {
+  .gallery-thumbnails {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+  }
+
+  .thumbnail-button img {
+    width: 60px;
+    height: 45px;
+  }
+}
+
+/* Styles pour le contraste élevé */
+@media (prefers-contrast: high) {
+  body {
+    color: white;
+    background-color: black;
+  }
+
+  a,
+  .tagline,
+  .gallery-item figcaption {
+    color: white;
+  }
+
+  .cta-button,
+  .gallery-nav-button:hover,
+  .gallery-nav-button:focus {
+    background-color: #ff0000;
+    color: black;
+  }
+
+  nav a[aria-current="page"],
+  .character-info h3 {
+    color: #ff0000;
+  }
+}
+
+/* Styles pour la réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
