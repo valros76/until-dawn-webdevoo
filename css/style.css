@@ -399,8 +399,13 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: auto;
   z-index: 1; /* S'assurer que la façade est au-dessus de l'iframe */
+
+  &:is(.hidden){
+    visibility:hidden;
+    pointer-events:none;
+  }
 }
 
 .video-facade img {
