@@ -37,7 +37,8 @@
           <h2>Une nuit pour survivre</h2>
           <p>Six amis se retrouvent piégés dans un chalet isolé en montagne. Ce qui devait être un week-end de
             retrouvailles se transforme en cauchemar quand ils découvrent qu'ils ne sont pas seuls.</p>
-          <p><small>* Ce site est le projet d'entraînement d'un développeur web, beaucoup d'informations fictives sont utilisées, comme pour la description des personnages.</small></p>
+          <p><small>* Ce site est le projet d'entraînement d'un développeur web, beaucoup d'informations fictives sont
+              utilisées, comme pour la description des personnages.</small></p>
           <img src="https://image.tmdb.org/t/p/w1280/nvRnMM9ED40EFWnerHz6hzbsf8N.jpg"
             alt="Image de la bande-annonce du film Until Dawn">
           <footer class="cta-container">
@@ -49,13 +50,19 @@
       <section id="bande-annonce">
         <h2>Bande-annonce</h2>
         <figure class="video-container">
-          <iframe src="https://www.youtube.com/embed/78r33GHdlbo?cc_load_policy=1"
+          <a href="https://www.youtube.com/embed/78r33GHdlbo?cc_load_policy=1&autoplay=1&mute=0" class="video-facade" target="iframe-bande-annonce">
+            <img src="images/affiche.webp" width="800" height="450" alt="Miniature de la bande-annonce">
+            <button class="video-play-button" aria-label="Lire la bande-annonce"></button>
+          </a>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/78r33GHdlbo?cc_load_policy=1"
             title="Bande-annonce du film Until Dawn" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            class="iframe-bande-annonce" allowfullscreen></iframe>
+            class="iframe-bande-annonce" allowfullscreen name="iframe-bande-annonce"></iframe>
           <figcaption>Chaque nuit, un cauchemar différent.</figcaption>
         </figure>
       </section>
+
+
 
       <section id="synopsis">
         <h2>Synopsis</h2>
@@ -103,7 +110,8 @@
 
   <footer role="contentinfo">
     <section class="container">
-      <p>&copy; 2025 Until Dawn - Tous droits réservés | Projet de démonstration créé par l'entreprise &copy; Webdevoo</p>
+      <p>&copy; 2025 Until Dawn - Tous droits réservés | Projet de démonstration créé par l'entreprise &copy; Webdevoo
+      </p>
       <nav aria-label="Liens légaux">
         <ul>
           <li><a href="mentions-legales.html">Mentions légales</a></li>
